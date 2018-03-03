@@ -9,7 +9,7 @@
 
 <script language="JavaScript">
     var currentSpanCount = 0;
-    function showSpan(id){
+    function showOrHideAnswer(id){
         if(document.getElementById(id).className === 'displayNone') {
             currentSpanCount ++;
             document.getElementById(id).setAttribute("class", "displayFlex");
@@ -39,7 +39,7 @@
 <script language="JavaScript">
     var currentQuestion = 1;
 
-    function showNextTable(){
+    function showNextQuestion(){
         document.getElementById("Q" + currentQuestion).setAttribute("style", "display: none");
         currentQuestion ++;
         document.getElementById("Q" + currentQuestion).setAttribute("style", "display: block");
@@ -73,7 +73,7 @@
         justify-content: center;
         flex-direction: column;
     }
-    .titleText {
+    .answerBlockText {
         text-transform: uppercase;
         color: aliceblue;
         font-family: "Lucida Grande", sans-serif;
@@ -85,7 +85,7 @@
         flex-direction: column;
         margin: 0 0 0 0;
     }
-    .numberText {
+    .numberBlockText {
         text-transform: uppercase;
         color: aliceblue;
         font-family: "DIN Condensed", sans-serif;
@@ -100,7 +100,7 @@
         padding-left: 3px;
         padding-top: 3px;
     }
-    .questionH1 {
+    .promptQuestionText {
         color: aliceblue;
         font-family: "DIN Condensed", serif;
         text-align: center;
@@ -116,7 +116,7 @@
     .displayFlex {
         display: flex;
     }
-    .numberCircle {
+    .answerNumberWithCircle {
         background: #00A2FF;
         border: 1px solid #CDCDCD;
         color: #fff;
@@ -164,95 +164,95 @@
 <div id="Q1">
     <table>
         <tr>
-            <td onclick="showSpan(1)">
-                <div id="1I" class="img"><div class="numberCircle" id="1C">1</div> <div id="1" class="displayNone"> <h3 class="titleText">Vomit </h3> <span class="numberText"> 37 </span> </div> </div>
+            <td onclick="showOrHideAnswer(1)">
+                <div id="1I" class="img"><div class="answerNumberWithCircle" id="1C">1</div> <div id="1" class="displayNone"> <h3 class="answerBlockText">Vomit </h3> <span class="numberBlockText"> 37 </span> </div> </div>
             </td>
-            <td onclick="showSpan(2)">
-                <div id="2I" class="img"><div class="numberCircle" id="2C">2</div> <div id="2" class="displayNone"> <h3 class="titleText">Go to the Doctor </h3> <span class="numberText"> 34 </span> </div> </div>
-            </td>
-        </tr>
-        <tr>
-            <td onclick="showSpan(3)">
-                <div id="3I" class="img"><div class="numberCircle" id="3C">3</div> <div id="3" class="displayNone"> <h3 class="titleText">Take Medicine </h3> <span class="numberText"> 14 </span> </div> </div>
-            </td>
-            <td onclick="showSpan(4)">
-                <div id="4I" class="img"><div class="numberCircle" id="4C">4</div> <div id="4" class="displayNone"> <h3 class="titleText">Stay home from work/school </h3> <span class="numberText"> 8 </span> </div> </div>
+            <td onclick="showOrHideAnswer(2)">
+                <div id="2I" class="img"><div class="answerNumberWithCircle" id="2C">2</div> <div id="2" class="displayNone"> <h3 class="answerBlockText">Go to the Doctor </h3> <span class="numberBlockText"> 34 </span> </div> </div>
             </td>
         </tr>
         <tr>
-            <td onclick="showSpan(5)">
-                <div id="5I" class="img"><div class="numberCircle" id="5C">5</div> <div id="5" class="displayNone"> <h3 class="titleText">Nap </h3> <span class="numberText"> 3</span> </div> </div>
+            <td onclick="showOrHideAnswer(3)">
+                <div id="3I" class="img"><div class="answerNumberWithCircle" id="3C">3</div> <div id="3" class="displayNone"> <h3 class="answerBlockText">Take Medicine </h3> <span class="numberBlockText"> 14 </span> </div> </div>
             </td>
-            <td onclick="showSpan(6)">
-                <div id="6I" class="img"><div class="numberCircle" id="6C">6</div> <div id="6" class="displayNone"> <h3 class="titleText">Eat Soup </h3> <span class="numberText"> 3</span> </div> </div>
+            <td onclick="showOrHideAnswer(4)">
+                <div id="4I" class="img"><div class="answerNumberWithCircle" id="4C">4</div> <div id="4" class="displayNone"> <h3 class="answerBlockText">Stay home from work/school </h3> <span class="numberBlockText"> 8 </span> </div> </div>
+            </td>
+        </tr>
+        <tr>
+            <td onclick="showOrHideAnswer(5)">
+                <div id="5I" class="img"><div class="answerNumberWithCircle" id="5C">5</div> <div id="5" class="displayNone"> <h3 class="answerBlockText">Nap </h3> <span class="numberBlockText"> 3</span> </div> </div>
+            </td>
+            <td onclick="showOrHideAnswer(6)">
+                <div id="6I" class="img"><div class="answerNumberWithCircle" id="6C">6</div> <div id="6" class="displayNone"> <h3 class="answerBlockText">Eat Soup </h3> <span class="numberBlockText"> 3</span> </div> </div>
             </td>
         </tr>
     </table>
     <br>
-    <h1 class="questionH1">Tell me something you only do when you're sick.</h1>
+    <h1 class="promptQuestionText">Tell me something you only do when you're sick.</h1>
 
 </div>
 
 <div id="Q2" style="display: none">
     <table>
         <tr>
-            <td onclick="showSpan(7)">
-                <div id="7I" class="img"> <div class="numberCircle" id="7C">1</div>  <div id="7" class="displayNone"> <h3 class="titleText">Food </h3> <span class="numberText"> 53 </span> </div> </div>
+            <td onclick="showOrHideAnswer(7)">
+                <div id="7I" class="img"> <div class="answerNumberWithCircle" id="7C">1</div>  <div id="7" class="displayNone"> <h3 class="answerBlockText">Food </h3> <span class="numberBlockText"> 53 </span> </div> </div>
             </td>
-            <td onclick="showSpan(8)">
-                <div id="8I" class="img"> <div class="numberCircle" id="8C">2</div>  <div id="8" class="displayNone"> <h3 class="titleText">Money </h3> <span class="numberText"> 17 </span> </div> </div>
-            </td>
-        </tr>
-        <tr>
-            <td onclick="showSpan(9)">
-                <div id="9I" class="img"><div class="numberCircle" id="9C">3</div>  <div id="9" class="displayNone"> <h3 class="titleText">Water</h3> <span class="numberText"> 14 </span> </div> </div>
-            </td>
-            <td onclick="showSpan(10)">
-                <div id="10I" class="img"><div class="numberCircle" id="10C">4</div> <div id="10" class="displayNone"> <h3 class="titleText">Electricity</h3> <span class="numberText"> 4 </span> </div> </div>
+            <td onclick="showOrHideAnswer(8)">
+                <div id="8I" class="img"> <div class="answerNumberWithCircle" id="8C">2</div>  <div id="8" class="displayNone"> <h3 class="answerBlockText">Money </h3> <span class="numberBlockText"> 17 </span> </div> </div>
             </td>
         </tr>
         <tr>
-            <td onclick="showSpan(11)">
-                <div id="11I" class="img"><div class="numberCircle" id="11C">5</div> <div id="11" class="displayNone"> <h3 class="titleText">Time </h3> <span class="numberText"> 3 </span> </div> </div>
+            <td onclick="showOrHideAnswer(9)">
+                <div id="9I" class="img"><div class="answerNumberWithCircle" id="9C">3</div>  <div id="9" class="displayNone"> <h3 class="answerBlockText">Water</h3> <span class="numberBlockText"> 14 </span> </div> </div>
             </td>
-            <td onclick="showSpan(12)">
-                <div id="12I" class="img"><div class="numberCircle" id="12C">6</div> <div id="12" class="displayNone"> <h3 class="titleText">Their Life</h3> <span class="numberText"> 3</span> </div> </div>
+            <td onclick="showOrHideAnswer(10)">
+                <div id="10I" class="img"><div class="answerNumberWithCircle" id="10C">4</div> <div id="10" class="displayNone"> <h3 class="answerBlockText">Electricity</h3> <span class="numberBlockText"> 4 </span> </div> </div>
+            </td>
+        </tr>
+        <tr>
+            <td onclick="showOrHideAnswer(11)">
+                <div id="11I" class="img"><div class="answerNumberWithCircle" id="11C">5</div> <div id="11" class="displayNone"> <h3 class="answerBlockText">Time </h3> <span class="numberBlockText"> 3 </span> </div> </div>
+            </td>
+            <td onclick="showOrHideAnswer(12)">
+                <div id="12I" class="img"><div class="answerNumberWithCircle" id="12C">6</div> <div id="12" class="displayNone"> <h3 class="answerBlockText">Their Life</h3> <span class="numberBlockText"> 3</span> </div> </div>
             </td>
         </tr>
     </table>
     <br>
-    <h1 class="questionH1">Name something Parents tell their kids not to waste.</h1>
+    <h1 class="promptQuestionText">Name something Parents tell their kids not to waste.</h1>
 </div>
 
 <div id="Q3" style="display: none">
     <table>
         <tr>
-            <td onclick="showSpan(13)">
-                <div id="13I" class="img"><div class="numberCircle" id="13C">1</div>  <div id="13" class="displayNone"> <h3 class="titleText">Pizza </h3> <span class="numberText"> 30 </span> </div> </div>
+            <td onclick="showOrHideAnswer(13)">
+                <div id="13I" class="img"><div class="answerNumberWithCircle" id="13C">1</div>  <div id="13" class="displayNone"> <h3 class="answerBlockText">Pizza </h3> <span class="numberBlockText"> 30 </span> </div> </div>
             </td>                                                                   
-            <td onclick="showSpan(14)">                                             
-                <div id="14I" class="img"><div class="numberCircle" id="14C">2</div>  <div id="14" class="displayNone"> <h3 class="titleText">Movie</h3> <span class="numberText"> 22 </span> </div> </div>
-            </td>                                                                   
-        </tr>                                                                       
-        <tr>                                                                        
-            <td onclick="showSpan(15)">                                             
-                <div id="15I" class="img"><div class="numberCircle" id="15C">3</div>   <div id="15" class="displayNone"> <h3 class="titleText">Jokes</h3> <span class="numberText"> 15 </span> </div> </div>
-            </td>                                                                   
-            <td onclick="showSpan(16)">                                             
-                <div id="16I" class="img"><div class="numberCircle" id="16C">4</div> <div id="16" class="displayNone"> <h3 class="titleText">Dance Moves</h3> <span class="numberText"> 12 </span> </div> </div>
+            <td onclick="showOrHideAnswer(14)">                                             
+                <div id="14I" class="img"><div class="answerNumberWithCircle" id="14C">2</div>  <div id="14" class="displayNone"> <h3 class="answerBlockText">Movie</h3> <span class="numberBlockText"> 22 </span> </div> </div>
             </td>                                                                   
         </tr>                                                                       
         <tr>                                                                        
-            <td onclick="showSpan(17)">                                             
-                <div id="17I" class="img"><div class="numberCircle" id="17C">5</div> <div id="17" class="displayNone"> <h3 class="titleText">Macaroni </h3> <span class="numberText"> 9 </span> </div> </div>
+            <td onclick="showOrHideAnswer(15)">                                             
+                <div id="15I" class="img"><div class="answerNumberWithCircle" id="15C">3</div>   <div id="15" class="displayNone"> <h3 class="answerBlockText">Jokes</h3> <span class="numberBlockText"> 15 </span> </div> </div>
             </td>                                                                   
-            <td onclick="showSpan(18)">                                             
-                <div id="18I" class="img"><div class="numberCircle" id="18C">6</div> <div id="18" class="displayNone"> <h3 class="titleText">Pick up lines</h3> <span class="numberText"> 6</span> </div> </div>
+            <td onclick="showOrHideAnswer(16)">                                             
+                <div id="16I" class="img"><div class="answerNumberWithCircle" id="16C">4</div> <div id="16" class="displayNone"> <h3 class="answerBlockText">Dance Moves</h3> <span class="numberBlockText"> 12 </span> </div> </div>
+            </td>                                                                   
+        </tr>                                                                       
+        <tr>                                                                        
+            <td onclick="showOrHideAnswer(17)">                                             
+                <div id="17I" class="img"><div class="answerNumberWithCircle" id="17C">5</div> <div id="17" class="displayNone"> <h3 class="answerBlockText">Macaroni </h3> <span class="numberBlockText"> 9 </span> </div> </div>
+            </td>                                                                   
+            <td onclick="showOrHideAnswer(18)">                                             
+                <div id="18I" class="img"><div class="answerNumberWithCircle" id="18C">6</div> <div id="18" class="displayNone"> <h3 class="answerBlockText">Pick up lines</h3> <span class="numberBlockText"> 6</span> </div> </div>
             </td>
         </tr>
         <tr>
-            <td onclick="showSpan(19)">
-                <div id="19I" class="img"><div class="numberCircle" id="19C">7</div> <div id="19" class="displayNone"> <h3 class="titleText">Music</h3> <span class="numberText"> 3</span> </div> </div>
+            <td onclick="showOrHideAnswer(19)">
+                <div id="19I" class="img"><div class="answerNumberWithCircle" id="19C">7</div> <div id="19" class="displayNone"> <h3 class="answerBlockText">Music</h3> <span class="numberBlockText"> 3</span> </div> </div>
             </td>
             <td>
                 <div class="img"></div>
@@ -260,39 +260,39 @@
         </tr>
     </table>
     <br>
-    <h1 class="questionH1">Name something that gets described as cheesy.</h1>
+    <h1 class="promptQuestionText">Name something that gets described as cheesy.</h1>
 
 </div>
 
 <div id="Q4" style="display: none">
     <table>
         <tr>
-            <td onclick="showSpan(20)">
-                <div id="20I" class="img"><div class="numberCircle" id="20C">1</div> <div id="20" class="displayNone"> <h3 class="titleText">English Accent </h3> <span class="numberText"> 44 </span> </div> </div>
+            <td onclick="showOrHideAnswer(20)">
+                <div id="20I" class="img"><div class="answerNumberWithCircle" id="20C">1</div> <div id="20" class="displayNone"> <h3 class="answerBlockText">English Accent </h3> <span class="numberBlockText"> 44 </span> </div> </div>
             </td>                                                                   
-            <td onclick="showSpan(21)">                                             
-                <div id="21I" class="img"><div class="numberCircle" id="21C">2</div> <div id="21" class="displayNone"> <h3 class="titleText">Drinking Tea</h3> <span class="numberText"> 12 </span> </div> </div>
-            </td>                                                                   
-        </tr>                                                                       
-        <tr>                                                                        
-            <td onclick="showSpan(22)">                                             
-                <div id="22I" class="img"><div class="numberCircle" id="22C">3</div> <div id="22" class="displayNone"> <h3 class="titleText">Royal Family</h3> <span class="numberText"> 11 </span> </div> </div>
-            </td>                                                                   
-            <td onclick="showSpan(23)">                                             
-                <div id="23I" class="img"><div class="numberCircle" id="23C">4</div> <div id="23" class="displayNone"> <h3 class="titleText">Bad Teeth</h3> <span class="numberText"> 10 </span> </div> </div>
+            <td onclick="showOrHideAnswer(21)">                                             
+                <div id="21I" class="img"><div class="answerNumberWithCircle" id="21C">2</div> <div id="21" class="displayNone"> <h3 class="answerBlockText">Drinking Tea</h3> <span class="numberBlockText"> 12 </span> </div> </div>
             </td>                                                                   
         </tr>                                                                       
         <tr>                                                                        
-            <td onclick="showSpan(24)">                                             
-                <div id="24I" class="img"><div class="numberCircle" id="24C">5</div> <div id="24" class="displayNone"> <h3 class="titleText">Flag </h3> <span class="numberText"> 4</span> </div> </div>
+            <td onclick="showOrHideAnswer(22)">                                             
+                <div id="22I" class="img"><div class="answerNumberWithCircle" id="22C">3</div> <div id="22" class="displayNone"> <h3 class="answerBlockText">Royal Family</h3> <span class="numberBlockText"> 11 </span> </div> </div>
             </td>                                                                   
-            <td onclick="showSpan(25)">                                             
-                <div id="25I" class="img"><div class="numberCircle" id="25C">6</div> <div id="25" class="displayNone"> <h3 class="titleText">Fish and Chips</h3> <span class="numberText"> 3</span> </div> </div>
+            <td onclick="showOrHideAnswer(23)">                                             
+                <div id="23I" class="img"><div class="answerNumberWithCircle" id="23C">4</div> <div id="23" class="displayNone"> <h3 class="answerBlockText">Bad Teeth</h3> <span class="numberBlockText"> 10 </span> </div> </div>
             </td>                                                                   
         </tr>                                                                       
         <tr>                                                                        
-            <td onclick="showSpan(26)">                                             
-                <div id="26I" class="img"><div class="numberCircle" id="26C">7</div> <div id="26" class="displayNone"> <h3 class="titleText">Snobby Attitude</h3> <span class="numberText"> 3</span> </div> </div>
+            <td onclick="showOrHideAnswer(24)">                                             
+                <div id="24I" class="img"><div class="answerNumberWithCircle" id="24C">5</div> <div id="24" class="displayNone"> <h3 class="answerBlockText">Flag </h3> <span class="numberBlockText"> 4</span> </div> </div>
+            </td>                                                                   
+            <td onclick="showOrHideAnswer(25)">                                             
+                <div id="25I" class="img"><div class="answerNumberWithCircle" id="25C">6</div> <div id="25" class="displayNone"> <h3 class="answerBlockText">Fish and Chips</h3> <span class="numberBlockText"> 3</span> </div> </div>
+            </td>                                                                   
+        </tr>                                                                       
+        <tr>                                                                        
+            <td onclick="showOrHideAnswer(26)">                                             
+                <div id="26I" class="img"><div class="answerNumberWithCircle" id="26C">7</div> <div id="26" class="displayNone"> <h3 class="answerBlockText">Snobby Attitude</h3> <span class="numberBlockText"> 3</span> </div> </div>
             </td>
             <td>
                 <div class="img"></div>
@@ -300,31 +300,31 @@
         </tr>
     </table>
     <br>
-    <h1 class="questionH1">Name something you associate with British People. </h1>
+    <h1 class="promptQuestionText">Name something you associate with British People. </h1>
 
 </div>
 
 <div id="Q5" style="display: none">
     <table>
         <tr>
-            <td onclick="showSpan(27)">
-                <div id="27I" class="img"><div class="numberCircle" id="27C">1</div>  <div id="27" class="displayNone"> <h3 class="titleText">Car</h3> <span class="numberText"> 50 </span> </div> </div>
+            <td onclick="showOrHideAnswer(27)">
+                <div id="27I" class="img"><div class="answerNumberWithCircle" id="27C">1</div>  <div id="27" class="displayNone"> <h3 class="answerBlockText">Car</h3> <span class="numberBlockText"> 50 </span> </div> </div>
             </td>                                                                   
-            <td onclick="showSpan(28)">                                             
-                <div id="28I" class="img"><div class="numberCircle" id="28C">2</div> <div id="28" class="displayNone"> <h3 class="titleText">Elevator</h3> <span class="numberText"> 26 </span> </div> </div>
-            </td>                                                                   
-        </tr>                                                                       
-        <tr>                                                                        
-            <td onclick="showSpan(29)">                                             
-                <div id="29I" class="img"><div class="numberCircle" id="29C">3</div> <div id="29" class="displayNone"> <h3 class="titleText">Plane</h3> <span class="numberText"> 13 </span> </div> </div>
-            </td>                                                                   
-            <td onclick="showSpan(30)">                                             
-                <div id="30I" class="img"><div class="numberCircle" id="30C">4</div> <div id="30" class="displayNone"> <h3 class="titleText">Rollercoaster</h3> <span class="numberText"> 6 </span> </div> </div>
+            <td onclick="showOrHideAnswer(28)">                                             
+                <div id="28I" class="img"><div class="answerNumberWithCircle" id="28C">2</div> <div id="28" class="displayNone"> <h3 class="answerBlockText">Elevator</h3> <span class="numberBlockText"> 26 </span> </div> </div>
             </td>                                                                   
         </tr>                                                                       
         <tr>                                                                        
-            <td onclick="showSpan(31)">                                             
-                <div id="31I" class="img"><div class="numberCircle" id="31C">5</div> <div id="31" class="displayNone"> <h3 class="titleText">House/Home </h3> <span class="numberText"> 3</span> </div> </div>
+            <td onclick="showOrHideAnswer(29)">                                             
+                <div id="29I" class="img"><div class="answerNumberWithCircle" id="29C">3</div> <div id="29" class="displayNone"> <h3 class="answerBlockText">Plane</h3> <span class="numberBlockText"> 13 </span> </div> </div>
+            </td>                                                                   
+            <td onclick="showOrHideAnswer(30)">                                             
+                <div id="30I" class="img"><div class="answerNumberWithCircle" id="30C">4</div> <div id="30" class="displayNone"> <h3 class="answerBlockText">Rollercoaster</h3> <span class="numberBlockText"> 6 </span> </div> </div>
+            </td>                                                                   
+        </tr>                                                                       
+        <tr>                                                                        
+            <td onclick="showOrHideAnswer(31)">                                             
+                <div id="31I" class="img"><div class="answerNumberWithCircle" id="31C">5</div> <div id="31" class="displayNone"> <h3 class="answerBlockText">House/Home </h3> <span class="numberBlockText"> 3</span> </div> </div>
             </td>
             <td>
                 <div class="img"></div>
@@ -332,31 +332,31 @@
         </tr>
     </table>
     <br>
-    <h1 class="questionH1">Name something you hope doesn’t break while you’re inside of it.</h1>
+    <h1 class="promptQuestionText">Name something you hope doesn’t break while you’re inside of it.</h1>
 
 </div>
 
 <div id="Q6" style="display: none">
     <table>
         <tr>
-            <td onclick="showSpan(32)">
-                <div id="32I" class="img"><div class="numberCircle" id="32C">1</div>  <div id="32" class="displayNone"> <h3 class="titleText">Gun</h3> <span class="numberText"> 41 </span> </div> </div>
+            <td onclick="showOrHideAnswer(32)">
+                <div id="32I" class="img"><div class="answerNumberWithCircle" id="32C">1</div>  <div id="32" class="displayNone"> <h3 class="answerBlockText">Gun</h3> <span class="numberBlockText"> 41 </span> </div> </div>
             </td>
-            <td onclick="showSpan(33)">
-                <div id="33I" class="img"><div class="numberCircle" id="33C">2</div> <div id="33" class="displayNone"> <h3 class="titleText">Car</h3> <span class="numberText"> 23 </span> </div> </div>
-            </td>
-        </tr>
-        <tr>
-            <td onclick="showSpan(34)">
-                <div id="34I" class="img"><div class="numberCircle" id="34C">3</div> <div id="34" class="displayNone"> <h3 class="titleText">Baked Potato</h3> <span class="numberText"> 18 </span> </div> </div>
-            </td>
-            <td onclick="showSpan(35)">
-                <div id="35I" class="img"><div class="numberCircle" id="35C">4</div> <div id="35" class="displayNone"> <h3 class="titleText">Millionaire</h3> <span class="numberText"> 9 </span> </div> </div>
+            <td onclick="showOrHideAnswer(33)">
+                <div id="33I" class="img"><div class="answerNumberWithCircle" id="33C">2</div> <div id="33" class="displayNone"> <h3 class="answerBlockText">Car</h3> <span class="numberBlockText"> 23 </span> </div> </div>
             </td>
         </tr>
         <tr>
-            <td onclick="showSpan(36)">
-                <div id="36I" class="img"><div class="numberCircle" id="36C">5</div> <div id="36" class="displayNone"> <h3 class="titleText">Question </h3> <span class="numberText"> 5</span> </div> </div>
+            <td onclick="showOrHideAnswer(34)">
+                <div id="34I" class="img"><div class="answerNumberWithCircle" id="34C">3</div> <div id="34" class="displayNone"> <h3 class="answerBlockText">Baked Potato</h3> <span class="numberBlockText"> 18 </span> </div> </div>
+            </td>
+            <td onclick="showOrHideAnswer(35)">
+                <div id="35I" class="img"><div class="answerNumberWithCircle" id="35C">4</div> <div id="35" class="displayNone"> <h3 class="answerBlockText">Millionaire</h3> <span class="numberBlockText"> 9 </span> </div> </div>
+            </td>
+        </tr>
+        <tr>
+            <td onclick="showOrHideAnswer(36)">
+                <div id="36I" class="img"><div class="answerNumberWithCircle" id="36C">5</div> <div id="36" class="displayNone"> <h3 class="answerBlockText">Question </h3> <span class="numberBlockText"> 5</span> </div> </div>
             </td>
             <td>
                 <div class="img"></div>
@@ -364,62 +364,62 @@
         </tr>
     </table>
     <br>
-    <h1 class="questionH1">Tell me something that might be described as loaded:</h1>
+    <h1 class="promptQuestionText">Tell me something that might be described as loaded:</h1>
 
 </div>
 
 <div id="Q7" style="display: none">
     <table>
         <tr>
-            <td onclick="showSpan(37)">
-                <div id="37I" class="img"> <div class="numberCircle" id="37C">1</div>  <div id="37" class="displayNone"> <h3 class="titleText">Electricity </h3> <span class="numberText"> 35 </span> </div> </div>
+            <td onclick="showOrHideAnswer(37)">
+                <div id="37I" class="img"> <div class="answerNumberWithCircle" id="37C">1</div>  <div id="37" class="displayNone"> <h3 class="answerBlockText">Electricity </h3> <span class="numberBlockText"> 35 </span> </div> </div>
             </td>
-            <td onclick="showSpan(38)">
-                <div id="38I" class="img"> <div class="numberCircle" id="38C">2</div>  <div id="38" class="displayNone"> <h3 class="titleText">Wheel </h3> <span class="numberText"> 20 </span> </div> </div>
-            </td>
-        </tr>
-        <tr>
-            <td onclick="showSpan(39)">
-                <div id="39I" class="img"><div class="numberCircle" id="39C">3</div>  <div id="39" class="displayNone"> <h3 class="titleText">Internet</h3> <span class="numberText"> 14 </span> </div> </div>
-            </td>
-            <td onclick="showSpan(40)">
-                <div id="40I" class="img"><div class="numberCircle" id="40C">4</div> <div id="40" class="displayNone"> <h3 class="titleText">Computer</h3> <span class="numberText"> 14 </span> </div> </div>
+            <td onclick="showOrHideAnswer(38)">
+                <div id="38I" class="img"> <div class="answerNumberWithCircle" id="38C">2</div>  <div id="38" class="displayNone"> <h3 class="answerBlockText">Wheel </h3> <span class="numberBlockText"> 20 </span> </div> </div>
             </td>
         </tr>
         <tr>
-            <td onclick="showSpan(41)">
-                <div id="41I" class="img"><div class="numberCircle" id="41C">5</div> <div id="41" class="displayNone"> <h3 class="titleText">Printing Press </h3> <span class="numberText"> 10 </span> </div> </div>
+            <td onclick="showOrHideAnswer(39)">
+                <div id="39I" class="img"><div class="answerNumberWithCircle" id="39C">3</div>  <div id="39" class="displayNone"> <h3 class="answerBlockText">Internet</h3> <span class="numberBlockText"> 14 </span> </div> </div>
             </td>
-            <td onclick="showSpan(42)">
-                <div id="42I" class="img"><div class="numberCircle" id="42C">6</div> <div id="42" class="displayNone"> <h3 class="titleText">Telephone</h3> <span class="numberText"> 7</span> </div> </div>
+            <td onclick="showOrHideAnswer(40)">
+                <div id="40I" class="img"><div class="answerNumberWithCircle" id="40C">4</div> <div id="40" class="displayNone"> <h3 class="answerBlockText">Computer</h3> <span class="numberBlockText"> 14 </span> </div> </div>
+            </td>
+        </tr>
+        <tr>
+            <td onclick="showOrHideAnswer(41)">
+                <div id="41I" class="img"><div class="answerNumberWithCircle" id="41C">5</div> <div id="41" class="displayNone"> <h3 class="answerBlockText">Printing Press </h3> <span class="numberBlockText"> 10 </span> </div> </div>
+            </td>
+            <td onclick="showOrHideAnswer(42)">
+                <div id="42I" class="img"><div class="answerNumberWithCircle" id="42C">6</div> <div id="42" class="displayNone"> <h3 class="answerBlockText">Telephone</h3> <span class="numberBlockText"> 7</span> </div> </div>
             </td>
         </tr>
     </table>
     <br>
-    <h1 class="questionH1">Name the most important invention of all time:</h1>
+    <h1 class="promptQuestionText">Name the most important invention of all time:</h1>
 </div>
 
 <div id="Q8" style="display: none">
     <table>
         <tr>
-            <td onclick="showSpan(43)">
-                <div id="43I" class="img"><div class="numberCircle" id="43C">1</div>  <div id="43" class="displayNone"> <h3 class="titleText">Anything and Everything</h3> <span class="numberText"> 23 </span> </div> </div>
+            <td onclick="showOrHideAnswer(43)">
+                <div id="43I" class="img"><div class="answerNumberWithCircle" id="43C">1</div>  <div id="43" class="displayNone"> <h3 class="answerBlockText">Anything and Everything</h3> <span class="numberBlockText"> 23 </span> </div> </div>
             </td>
-            <td onclick="showSpan(44)">
-                <div id="44I" class="img"><div class="numberCircle" id="44C">2</div> <div id="44" class="displayNone"> <h3 class="titleText">Eggs</h3> <span class="numberText"> 20 </span> </div> </div>
-            </td>
-        </tr>
-        <tr>
-            <td onclick="showSpan(45)">
-                <div id="45I" class="img"><div class="numberCircle" id="45C">3</div> <div id="45" class="displayNone"> <h3 class="titleText">Burger</h3> <span class="numberText"> 17 </span> </div> </div>
-            </td>
-            <td onclick="showSpan(46)">
-                <div id="46I" class="img"><div class="numberCircle" id="46C">4</div> <div id="46" class="displayNone"> <h3 class="titleText">Sandwich</h3> <span class="numberText"> 7 </span> </div> </div>
+            <td onclick="showOrHideAnswer(44)">
+                <div id="44I" class="img"><div class="answerNumberWithCircle" id="44C">2</div> <div id="44" class="displayNone"> <h3 class="answerBlockText">Eggs</h3> <span class="numberBlockText"> 20 </span> </div> </div>
             </td>
         </tr>
         <tr>
-            <td onclick="showSpan(47)">
-                <div id="47I" class="img"><div class="numberCircle" id="47C">5</div> <div id="47" class="displayNone"> <h3 class="titleText">Mac and Cheese </h3> <span class="numberText"> 7</span> </div> </div>
+            <td onclick="showOrHideAnswer(45)">
+                <div id="45I" class="img"><div class="answerNumberWithCircle" id="45C">3</div> <div id="45" class="displayNone"> <h3 class="answerBlockText">Burger</h3> <span class="numberBlockText"> 17 </span> </div> </div>
+            </td>
+            <td onclick="showOrHideAnswer(46)">
+                <div id="46I" class="img"><div class="answerNumberWithCircle" id="46C">4</div> <div id="46" class="displayNone"> <h3 class="answerBlockText">Sandwich</h3> <span class="numberBlockText"> 7 </span> </div> </div>
+            </td>
+        </tr>
+        <tr>
+            <td onclick="showOrHideAnswer(47)">
+                <div id="47I" class="img"><div class="answerNumberWithCircle" id="47C">5</div> <div id="47" class="displayNone"> <h3 class="answerBlockText">Mac and Cheese </h3> <span class="numberBlockText"> 7</span> </div> </div>
             </td>
             <td>
                 <div class="img"></div>
@@ -427,62 +427,62 @@
         </tr>
     </table>
     <br>
-    <h1 class="questionH1">Name something you can add bacon to:</h1>
+    <h1 class="promptQuestionText">Name something you can add bacon to:</h1>
 
 </div>
 
 <div id="Q9" style="display: none">
     <table>
         <tr>
-            <td onclick="showSpan(48)">
-                <div id="48I" class="img"> <div class="numberCircle" id="48C">1</div>  <div id="48" class="displayNone"> <h3 class="titleText">Phone/Radio </h3> <span class="numberText"> 23 </span> </div> </div>
+            <td onclick="showOrHideAnswer(48)">
+                <div id="48I" class="img"> <div class="answerNumberWithCircle" id="48C">1</div>  <div id="48" class="displayNone"> <h3 class="answerBlockText">Phone/Radio </h3> <span class="numberBlockText"> 23 </span> </div> </div>
             </td>
-            <td onclick="showSpan(49)">
-                <div id="49I" class="img"> <div class="numberCircle" id="49C">2</div>  <div id="49" class="displayNone"> <h3 class="titleText">Clean Water </h3> <span class="numberText"> 22 </span> </div> </div>
-            </td>
-        </tr>
-        <tr>
-            <td onclick="showSpan(50)">
-                <div id="50I" class="img"><div class="numberCircle" id="50C">3</div>  <div id="50" class="displayNone"> <h3 class="titleText">Boat/Vehicle</h3> <span class="numberText"> 14 </span> </div> </div>
-            </td>
-            <td onclick="showSpan(51)">
-                <div id="51I" class="img"><div class="numberCircle" id="51C">4</div> <div id="51" class="displayNone"> <h3 class="titleText">Knife/Tools</h3> <span class="numberText"> 6 </span> </div> </div>
+            <td onclick="showOrHideAnswer(49)">
+                <div id="49I" class="img"> <div class="answerNumberWithCircle" id="49C">2</div>  <div id="49" class="displayNone"> <h3 class="answerBlockText">Clean Water </h3> <span class="numberBlockText"> 22 </span> </div> </div>
             </td>
         </tr>
         <tr>
-            <td onclick="showSpan(52)">
-                <div id="52I" class="img"><div class="numberCircle" id="52C">5</div> <div id="52" class="displayNone"> <h3 class="titleText">Another Person/Friend</h3> <span class="numberText"> 5 </span> </div> </div>
+            <td onclick="showOrHideAnswer(50)">
+                <div id="50I" class="img"><div class="answerNumberWithCircle" id="50C">3</div>  <div id="50" class="displayNone"> <h3 class="answerBlockText">Boat/Vehicle</h3> <span class="numberBlockText"> 14 </span> </div> </div>
             </td>
-            <td onclick="showSpan(53)">
-                <div id="53I" class="img"><div class="numberCircle" id="53C">6</div> <div id="53" class="displayNone"> <h3 class="titleText">Food</h3> <span class="numberText"> 3</span> </div> </div>
+            <td onclick="showOrHideAnswer(51)">
+                <div id="51I" class="img"><div class="answerNumberWithCircle" id="51C">4</div> <div id="51" class="displayNone"> <h3 class="answerBlockText">Knife/Tools</h3> <span class="numberBlockText"> 6 </span> </div> </div>
+            </td>
+        </tr>
+        <tr>
+            <td onclick="showOrHideAnswer(52)">
+                <div id="52I" class="img"><div class="answerNumberWithCircle" id="52C">5</div> <div id="52" class="displayNone"> <h3 class="answerBlockText">Another Person/Friend</h3> <span class="numberBlockText"> 5 </span> </div> </div>
+            </td>
+            <td onclick="showOrHideAnswer(53)">
+                <div id="53I" class="img"><div class="answerNumberWithCircle" id="53C">6</div> <div id="53" class="displayNone"> <h3 class="answerBlockText">Food</h3> <span class="numberBlockText"> 3</span> </div> </div>
             </td>
         </tr>
     </table>
     <br>
-    <h1 class="questionH1">What is one thing you would want to have with you if you were stranded on a desert island?</h1>
+    <h1 class="promptQuestionText">What is one thing you would want to have with you if you were stranded on a desert island?</h1>
 </div>
 
 <div id="Q10" style="display: none">
     <table>
         <tr>
-            <td onclick="showSpan(54)">
-                <div id="54I" class="img"><div class="numberCircle" id="54C">1</div>  <div id="54" class="displayNone"> <h3 class="titleText">Clothes</h3> <span class="numberText"> 34 </span> </div> </div>
+            <td onclick="showOrHideAnswer(54)">
+                <div id="54I" class="img"><div class="answerNumberWithCircle" id="54C">1</div>  <div id="54" class="displayNone"> <h3 class="answerBlockText">Clothes</h3> <span class="numberBlockText"> 34 </span> </div> </div>
             </td>
-            <td onclick="showSpan(55)">
-                <div id="55I" class="img"><div class="numberCircle" id="55C">2</div> <div id="55" class="displayNone"> <h3 class="titleText">Toothbrush</h3> <span class="numberText"> 30 </span> </div> </div>
-            </td>
-        </tr>
-        <tr>
-            <td onclick="showSpan(56)">
-                <div id="56I" class="img"><div class="numberCircle" id="56C">3</div> <div id="56" class="displayNone"> <h3 class="titleText">Money</h3> <span class="numberText"> 21</span> </div> </div>
-            </td>
-            <td onclick="showSpan(57)">
-                <div id="57I" class="img"><div class="numberCircle" id="57C">4</div> <div id="57" class="displayNone"> <h3 class="titleText">Camera</h3> <span class="numberText">9 </span> </div> </div>
+            <td onclick="showOrHideAnswer(55)">
+                <div id="55I" class="img"><div class="answerNumberWithCircle" id="55C">2</div> <div id="55" class="displayNone"> <h3 class="answerBlockText">Toothbrush</h3> <span class="numberBlockText"> 30 </span> </div> </div>
             </td>
         </tr>
         <tr>
-            <td onclick="showSpan(58)">
-                <div id="58I" class="img"><div class="numberCircle" id="58C">5</div> <div id="58" class="displayNone"> <h3 class="titleText">Passport</h3> <span class="numberText"> 4</span> </div> </div>
+            <td onclick="showOrHideAnswer(56)">
+                <div id="56I" class="img"><div class="answerNumberWithCircle" id="56C">3</div> <div id="56" class="displayNone"> <h3 class="answerBlockText">Money</h3> <span class="numberBlockText"> 21</span> </div> </div>
+            </td>
+            <td onclick="showOrHideAnswer(57)">
+                <div id="57I" class="img"><div class="answerNumberWithCircle" id="57C">4</div> <div id="57" class="displayNone"> <h3 class="answerBlockText">Camera</h3> <span class="numberBlockText">9 </span> </div> </div>
+            </td>
+        </tr>
+        <tr>
+            <td onclick="showOrHideAnswer(58)">
+                <div id="58I" class="img"><div class="answerNumberWithCircle" id="58C">5</div> <div id="58" class="displayNone"> <h3 class="answerBlockText">Passport</h3> <span class="numberBlockText"> 4</span> </div> </div>
             </td>
             <td>
                 <div class="img"></div>
@@ -490,15 +490,15 @@
         </tr>
     </table>
     <br>
-    <h1 class="questionH1">What one thing would you most hate to forget to pack on a trip?</h1>
+    <h1 class="promptQuestionText">What one thing would you most hate to forget to pack on a trip?</h1>
 
 </div>
 
-<div onclick="showNextTable()">
+<div onclick="showNextQuestion()">
     <h3 class="nextButton" id="nextButton"> Next </h3>
 </div>
 
-<div onclick="showNextTable()">
+<div onclick="showNextQuestion()">
     <h3 class="tieButton" id="tieButton"> It's a tie</h3>
 </div>
 
