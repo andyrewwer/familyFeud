@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>V-Youth Fun</title>
-    <script src="jquery-3.3.1.js"></script>
-    <script src="jquery.flip.min.js"></script>
 </head>
 
 <script language="JavaScript">
@@ -44,7 +42,6 @@
         currentQuestion ++;
         document.getElementById("Q" + currentQuestion).setAttribute("style", "display: block");
         document.getElementById("nextButton").setAttribute("style", "display: none");
-
     }
 </script>
 
@@ -158,8 +155,25 @@
     }
 </style>
 
+<script language="JavaScript">
+
+    function doSomething() {
+    var div = document.createElement("div");
+        div.style.width = "100px";
+        div.style.height = "100px";
+        div.style.background = "red";
+        div.style.color = "white";
+        div.innerHTML = "Hello";
+        document.getElementById("main").appendChild(div);
+    }
+
+</script>
+
 
 <body background="resources/familyFeud-background.jpg">
+
+
+<div id="main"></div>
 
 <div id="Q1">
     <table>
